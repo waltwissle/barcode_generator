@@ -8,7 +8,7 @@ import base64
 app = Flask(__name__)
 
 # Config for SQLAlchemy and Flask-Mail
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:compound#1@localhost:5432/barcode_mebal'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ipydhizqihcdqg:59e5a4d67cff256f629318c199ee91c94230d0295ed8886d5d10faca8e569b54@ec2-52-205-45-222.compute-1.amazonaws.com:5432/d837b9p05cajih'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # your mail server
 app.config['MAIL_PORT'] = 587
@@ -26,6 +26,12 @@ class Registration(db.Model):
     barcode = db.Column(db.String)
     email = db.Column(db.String)
     servings = db.Column(db.Integer)
+
+@app.route('/', methods=['GET'])
+def mebal():
+    return jsonify(message='Hello world'), 200
+
+
 
 @app.route('/register', methods=['POST'])
 def register():
