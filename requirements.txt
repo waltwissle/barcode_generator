@@ -1,0 +1,14 @@
+Flask
+python-barcode
+gunicorn
+sendgrid
+flask_sqlalchemy
+flask_mail
+psycopg2
+psycopg2-binary 
+python-barcode[pil]
+#pysqlite3
+Pillow
+#base64
+
+
